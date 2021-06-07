@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:prueba_tecnica/src/Preferences/preferencias_usuario.dart';
+import '../Preferences/preferencias_usuario.dart';
 
 import '../Models/Usuario_model.dart';
 import '../Utils/Utils.dart';

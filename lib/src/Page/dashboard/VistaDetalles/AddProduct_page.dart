@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_tecnica/src/Bloc/Provider.dart';
-import 'package:prueba_tecnica/src/Models/Categoria_model.dart';
-import 'package:prueba_tecnica/src/Models/Producto_model.dart';
-import 'package:prueba_tecnica/src/Page/Inicio/Class/Icon-titulo.dart';
-import 'package:prueba_tecnica/src/Page/Inicio/Class/inputFormaularios.dart';
-import 'package:prueba_tecnica/src/Page/dashboard/Class/getCategorias.dart';
-import 'package:prueba_tecnica/src/Provider/Producto.dart';
-import 'package:prueba_tecnica/src/Utils/Utils.dart';
-import 'package:prueba_tecnica/src/Widgets/Fondo.dart';
-import 'package:prueba_tecnica/src/Widgets/Loading.dart';
+import '../../../Bloc/Provider.dart';
+import '../../../Models/Categoria_model.dart';
+import '../../../Models/Producto_model.dart';
+import '../../../Page/Inicio/Class/Icon-titulo.dart';
+import '../../../Page/Inicio/Class/inputFormaularios.dart';
+import '../../../Page/dashboard/Class/getCategorias.dart';
+import '../../../Provider/Producto.dart';
+import '../../../Utils/Utils.dart';
+import '../../../Widgets/Fondo.dart';
+import '../../../Widgets/Loading.dart';
 
 class AddProductPage extends StatefulWidget {
 

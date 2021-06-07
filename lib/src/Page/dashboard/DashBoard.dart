@@ -1,9 +1,9 @@
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:prueba_tecnica/src/Page/dashboard/Categorias_page.dart';
-import 'package:prueba_tecnica/src/Page/dashboard/Perfil_page.dart';
-import 'package:prueba_tecnica/src/Page/dashboard/Productos_page.dart';
+import '../../Page/dashboard/Categorias_page.dart';
+import '../../Page/dashboard/Perfil_page.dart';
+import '../../Page/dashboard/Productos_page.dart';
 
 class DashboardPage extends StatefulWidget {
 

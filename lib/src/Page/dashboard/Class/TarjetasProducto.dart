@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_tecnica/src/Models/Producto_model.dart';
+import '../../../Models/Producto_model.dart';
 
 
 class TarjetasProducto extends StatelessWidget {

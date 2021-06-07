@@ -348,9 +348,9 @@ class _LoginPageState extends State<LoginPage> {
         keyform.currentState.save();
         setState(() {_isLoading = true;});
         print(usuarioModelToJsoLogin(_usuario));
-        new Future.delayed(Duration(milliseconds: 5000), () {
-          // Map data = await _provideUsuario.login(_usuario);
-          Map data = {'ok':true, 'code':201, 'user': {"firsname": "pepito", "lastname": "Perez", "email": "quicenojuan996@gmail.com"}};
+        // new Future.delayed(Duration(milliseconds: 5000), () {
+          Map data = await _provideUsuario.login(_usuario);
+          // Map data = {'ok':true, 'code':201, 'user': {"firsname": "pepito", "lastname": "Perez", "email": "quicenojuan996@gmail.com"}};
           setState(() {_isLoading = false;});
           if(data['ok']){
             if(_isSwitched){
@@ -367,7 +367,7 @@ class _LoginPageState extends State<LoginPage> {
               alertaErrorConexion(context, 'Problemas en la verificación', 'Parece que no se completo el registro');
             }
           }
-        });
+        // });
       }
     }catch(general){
       setState(() {_isLoading = false;});

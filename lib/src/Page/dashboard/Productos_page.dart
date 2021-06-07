@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_tecnica/src/Bloc/Provider.dart';
-import 'package:prueba_tecnica/src/Models/Producto_model.dart';
-import 'package:prueba_tecnica/src/Provider/Producto.dart';
-import 'package:prueba_tecnica/src/Widgets/Loading.dart';
+
+import '../../Bloc/Provider.dart';
+import '../../Models/Producto_model.dart';
+import '../../Provider/Producto.dart';
+import '../../Widgets/Loading.dart';
 import '../../Utils/Utils.dart';
 import '../../Widgets/Fondo.dart';
 import 'Class/TarjetasProducto.dart';
@@ -16,7 +17,7 @@ class ProductosPage extends StatefulWidget {
 class _ProductosPageState extends State<ProductosPage> {
 
   final _providerProductos = new ProductoProvider();
-  ProductoModel _producto = ProductoModel();
+  // ProductoModel _producto = ProductoModel();
 
   List<ProductoModel> _listaProductos = new List();
 

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_tecnica/src/Bloc/PatronBloc.dart';
-import 'package:prueba_tecnica/src/Bloc/Provider.dart';
-import 'package:prueba_tecnica/src/Models/Categoria_model.dart';
-import 'package:prueba_tecnica/src/Page/Inicio/Class/inputFormaularios.dart';
-import 'package:prueba_tecnica/src/Page/dashboard/Class/ImagenDetalle.dart';
-import 'package:prueba_tecnica/src/Provider/categoria.dart';
-import 'package:prueba_tecnica/src/Utils/Utils.dart';
-import 'package:prueba_tecnica/src/Widgets/Fondo.dart';
-import 'package:prueba_tecnica/src/Widgets/Loading.dart';
+import '../../../Bloc/PatronBloc.dart';
+import '../../../Bloc/Provider.dart';
+import '../../../Models/Categoria_model.dart';
+import '../../../Page/Inicio/Class/inputFormaularios.dart';
+import '../../../Page/dashboard/Class/ImagenDetalle.dart';
+import '../../../Provider/categoria.dart';
+import '../../../Utils/Utils.dart';
+import '../../../Widgets/Fondo.dart';
+import '../../../Widgets/Loading.dart';
 
 
 class DetalleCategoryPage extends StatefulWidget {

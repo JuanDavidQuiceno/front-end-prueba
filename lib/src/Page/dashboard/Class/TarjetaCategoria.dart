@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_tecnica/src/Models/Categoria_model.dart';
+import '../../../Models/Categoria_model.dart';
 
 class TarjetasCategoria extends StatelessWidget {
   final CategoriaModel categoria;

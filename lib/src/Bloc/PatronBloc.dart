@@ -1,8 +1,9 @@
 import 'dart:async';
-import 'package:prueba_tecnica/src/Models/Categoria_model.dart';
-import 'package:prueba_tecnica/src/Models/Producto_model.dart';
-import 'package:prueba_tecnica/src/Models/Usuario_model.dart';
 import 'package:rxdart/rxdart.dart';
+
+import '../Models/Categoria_model.dart';
+import '../Models/Producto_model.dart';
+import '../Models/Usuario_model.dart';
 
 import '../Bloc/validator.dart';
 

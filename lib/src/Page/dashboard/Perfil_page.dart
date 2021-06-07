@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:prueba_tecnica/src/Bloc/PatronBloc.dart';
-import 'package:prueba_tecnica/src/Bloc/Provider.dart';
-import 'package:prueba_tecnica/src/Models/Usuario_model.dart';
-import 'package:prueba_tecnica/src/Preferences/preferencias_usuario.dart';
-import 'package:prueba_tecnica/src/Utils/Utils.dart';
-import 'package:prueba_tecnica/src/Widgets/Fondo.dart';
+import '../../Bloc/PatronBloc.dart';
+import '../../Bloc/Provider.dart';
+import '../../Models/Usuario_model.dart';
+import '../../Preferences/preferencias_usuario.dart';
+import '../../Utils/Utils.dart';
+import '../../Widgets/Fondo.dart';
 
 class PerfilPage extends StatefulWidget {
 

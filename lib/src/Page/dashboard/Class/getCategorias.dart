@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:prueba_tecnica/src/Bloc/Provider.dart';
-import 'package:prueba_tecnica/src/Models/Categoria_model.dart';
-import 'package:prueba_tecnica/src/Provider/categoria.dart';
+
+import '../../../Bloc/Provider.dart';
+import '../../../Models/Categoria_model.dart';
+import '../../../Provider/categoria.dart';
 
 final _providerCategoria = new CategoriaProvider();
 

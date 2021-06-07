@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_tecnica/src/Bloc/Provider.dart';
-import 'package:prueba_tecnica/src/Models/Categoria_model.dart';
-import 'package:prueba_tecnica/src/Models/Producto_model.dart';
-import 'package:prueba_tecnica/src/Page/Inicio/Class/Icon-titulo.dart';
-import 'package:prueba_tecnica/src/Page/Inicio/Class/inputFormaularios.dart';
-import 'package:prueba_tecnica/src/Provider/categoria.dart';
-import 'package:prueba_tecnica/src/Utils/Utils.dart';
-import 'package:prueba_tecnica/src/Widgets/Fondo.dart';
-import 'package:prueba_tecnica/src/Widgets/Loading.dart';
+import '../../../Bloc/Provider.dart';
+import '../../../Models/Categoria_model.dart';
+import '../../../Page/Inicio/Class/Icon-titulo.dart';
+import '../../../Page/Inicio/Class/inputFormaularios.dart';
+import '../../../Provider/categoria.dart';
+import '../../../Utils/Utils.dart';
+import '../../../Widgets/Fondo.dart';
+import '../../../Widgets/Loading.dart';
 
 class AddCategoryPage extends StatefulWidget {
 

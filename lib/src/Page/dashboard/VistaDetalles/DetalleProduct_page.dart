@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_tecnica/src/Bloc/PatronBloc.dart';
-import 'package:prueba_tecnica/src/Bloc/Provider.dart';
-import 'package:prueba_tecnica/src/Models/Categoria_model.dart';
-import 'package:prueba_tecnica/src/Models/Producto_model.dart';
-import 'package:prueba_tecnica/src/Page/Inicio/Class/inputFormaularios.dart';
-import 'package:prueba_tecnica/src/Page/dashboard/Class/ImagenDetalle.dart';
-import 'package:prueba_tecnica/src/Page/dashboard/Class/getCategorias.dart';
-import 'package:prueba_tecnica/src/Provider/Producto.dart';
-import 'package:prueba_tecnica/src/Utils/Utils.dart';
-import 'package:prueba_tecnica/src/Widgets/Fondo.dart';
-import 'package:prueba_tecnica/src/Widgets/Loading.dart';
+import '../../../Bloc/PatronBloc.dart';
+import '../../../Bloc/Provider.dart';
+import '../../../Models/Categoria_model.dart';
+import '../../../Models/Producto_model.dart';
+import '../../../Page/Inicio/Class/inputFormaularios.dart';
+import '../../../Page/dashboard/Class/ImagenDetalle.dart';
+import '../../../Page/dashboard/Class/getCategorias.dart';
+import '../../../Provider/Producto.dart';
+import '../../../Utils/Utils.dart';
+import '../../../Widgets/Fondo.dart';
+import '../../../Widgets/Loading.dart';
 
 
 class DetalleProductPage extends StatefulWidget {
@@ -36,7 +36,6 @@ class _DetalleProductPageState extends State<DetalleProductPage> {
 
   bool _isLoading = false;
   bool iniciarDatos = true;
-  String _idCategoria = '';
 
   @override
   void initState() { 

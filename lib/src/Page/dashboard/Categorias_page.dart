@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:prueba_tecnica/src/Bloc/Provider.dart';
-import 'package:prueba_tecnica/src/Models/Categoria_model.dart';
-import 'package:prueba_tecnica/src/Page/dashboard/Class/TarjetaCategoria.dart';
-import 'package:prueba_tecnica/src/Page/dashboard/Class/getCategorias.dart';
-import 'package:prueba_tecnica/src/Utils/Utils.dart';
-import 'package:prueba_tecnica/src/Widgets/Fondo.dart';
-import 'package:prueba_tecnica/src/Widgets/Loading.dart';
+import '../../Bloc/Provider.dart';
+import '../../Models/Categoria_model.dart';
+import '../../Page/dashboard/Class/TarjetaCategoria.dart';
+import '../../Page/dashboard/Class/getCategorias.dart';
+import '../../Utils/Utils.dart';
+import '../../Widgets/Fondo.dart';
+import '../../Widgets/Loading.dart';
 
 
 class CategoriasPage extends StatefulWidget {

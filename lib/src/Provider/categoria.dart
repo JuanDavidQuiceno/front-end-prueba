@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:prueba_tecnica/src/Models/Categoria_model.dart';
-import 'package:prueba_tecnica/src/Preferences/preferencias_usuario.dart';
+import '../Models/Categoria_model.dart';
+import '../Preferences/preferencias_usuario.dart';
 
 import '../Utils/Utils.dart';
 

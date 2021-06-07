@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:prueba_tecnica/src/Models/Categoria_model.dart';
+import '../Models/Categoria_model.dart';
 
 class Productos {
 
