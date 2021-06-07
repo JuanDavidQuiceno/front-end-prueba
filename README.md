@@ -1,16 +1,9 @@
 # prueba_tecnica
 
-A new Flutter project.
+Para este proyecto instalar flutter  a la versión **[1.22.5](https://flutter.dev/docs/development/tools/sdk/releases),**. 
 
-## Getting Started
+> **Nota:** La aplicación se encuentra en **debug** y la implementación solo para **Android**.
+>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> **Nota:**En la ruta **lib/Utils/Utils.dart** cambiar la ruta para conectarse con el back-end en la funcion  **urlBase()**, un ejemplo: **https://dominio.com** sin terminar con el caracter **/**.
+>
