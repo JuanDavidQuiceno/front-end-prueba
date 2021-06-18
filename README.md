@@ -1,6 +1,6 @@
 # prueba_tecnica
 
-Para este proyecto instalar flutter  a la versión **[1.22.5](https://flutter.dev/docs/development/tools/sdk/releases),**. 
+Para este proyecto instalar flutter  a la versión **[2.2.1](https://flutter.dev/docs/development/tools/sdk/releases)**. 
 
 > **Nota:** La aplicación se encuentra en **debug** y la implementación solo para **Android**.
 >
