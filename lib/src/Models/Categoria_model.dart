@@ -2,7 +2,7 @@ import 'dart:convert';
 
 class Categorias {
 
-  List<CategoriaModel> items = new List();
+  List<CategoriaModel> items = [];
 
   Categorias();
 

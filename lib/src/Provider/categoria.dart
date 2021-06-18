@@ -15,7 +15,7 @@ class CategoriaProvider{
     final userHeader = {
       'Authorization': 'Bearer ${_prefs.token}'
     };
-    final respuesta = await http.get('$_url/categorias', headers: userHeader);
+    final respuesta = await http.get(Uri.parse("$_url/categorias"), headers: userHeader);
     final decodeRespuesta = json.decode(respuesta.body );
     if(respuesta.statusCode == 201 && decodeRespuesta.containsKey('categorias')){
       return {'ok': true, 'code': respuesta.statusCode , 'categorias': decodeRespuesta['categorias'] };
@@ -34,7 +34,7 @@ class CategoriaProvider{
       'Authorization': 'Bearer ${_prefs.token}'
     };
     
-    final respuesta = await http.post('$_url/categorias', headers: userHeader, body: categoriaModelToJson(categoria));
+    final respuesta = await http.post(Uri.parse('$_url/categorias'), headers: userHeader, body: categoriaModelToJson(categoria));
     final decodeRespuesta = json.decode(respuesta.body);
     if(respuesta.statusCode == 201 && decodeRespuesta.containsKey('categorias') && decodeRespuesta.containsKey('msg')){
       return {'ok': true, 'code': respuesta.statusCode, 'titulo': decodeRespuesta['msg'], 'mensaje':'Categoria creada correctamente', 'categorias':decodeRespuesta['categorias']};
@@ -53,7 +53,7 @@ class CategoriaProvider{
       'Authorization': 'Bearer ${_prefs.token}'
     };
     
-    final respuesta = await http.put('$_url/categorias/${categoria.id}', headers: userHeader, body:categoriaModelToJson(categoria));
+    final respuesta = await http.put(Uri.parse('$_url/categorias/${categoria.id}'), headers: userHeader, body:categoriaModelToJson(categoria));
     final decodeRespuesta = json.decode(respuesta.body);
     if(respuesta.statusCode == 201 && decodeRespuesta.containsKey('categorias') && decodeRespuesta.containsKey('msg')){
       return {'ok': true, 'code': respuesta.statusCode, 'titulo': decodeRespuesta['msg'], 'mensaje': 'Actualizamos el producto correctamente', 'categorias':decodeRespuesta['categorias']};
@@ -70,7 +70,7 @@ class CategoriaProvider{
     final userHeader = {
       'Authorization': 'Bearer ${_prefs.token}'
     };
-    final respuesta = await http.delete('$_url/categorias/$id', headers: userHeader);
+    final respuesta = await http.delete(Uri.parse('$_url/categorias/$id'), headers: userHeader);
     final decodeRespuesta = json.decode(respuesta.body);
     if(respuesta.statusCode == 201 && decodeRespuesta.containsKey('categoria') && decodeRespuesta.containsKey('msg')){
       return {'ok': true, 'code': respuesta.statusCode,  'titulo': decodeRespuesta['msg'], 'mensaje': 'Se elimino de manera correcta la categoria'};

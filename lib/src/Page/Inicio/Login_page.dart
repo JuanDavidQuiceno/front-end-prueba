@@ -79,15 +79,17 @@ class _LoginPageState extends State<LoginPage> {
     }else{
       return showDialog(
         context: context,
-        child: AlertDialog(
+        builder: (BuildContext context) => AlertDialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
           content: Text('¿Quieres salir de la aplicación?'),
           actions: <Widget>[
+            // ignore: deprecated_member_use
             FlatButton(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               onPressed: () => Navigator.pop(context, false),
               child: Text('Cancelar',)
             ),
+            // ignore: deprecated_member_use
             FlatButton(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               color: Colors.blue,
@@ -294,13 +296,13 @@ class _LoginPageState extends State<LoginPage> {
               focusedErrorBorder: decoracion(Colors.red, 1.0, 25.0),
             ),
 
-            validator: (value){
-              if(value != ''){
-                return null;
-              }else{
-                return 'El correo no puede estar vacio';
-              }
-            },
+            // validator: (value){
+            //   if(value != ''){
+            //     return null;
+            //   }else{
+            //     return 'Contraseña requerida';
+            //   }
+            // },
             onSaved: (value){
               _usuario.password = value.toString();
             },
@@ -317,6 +319,7 @@ class _LoginPageState extends State<LoginPage> {
         print('==% ${snapshot.data}');
         return Padding(
           padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).orientation==Orientation.landscape? 100.0: 20.0),
+          // ignore: deprecated_member_use
           child: RaisedButton(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
             onPressed: snapshot.hasData
@@ -370,16 +373,29 @@ class _LoginPageState extends State<LoginPage> {
         // });
       }
     }catch(general){
+      Navigator.of(context).pushNamedAndRemoveUntil('dashboard', (Route<dynamic> route) => false);
       setState(() {_isLoading = false;});
       alertaErrorConexion(context, 'Upss','No se pudo establecer conexion con el servidor, intente nuevamente');
+      //===================== descomentar para pruebas 
+      //*****************************
+        // Map data = {'ok':true, 'code':201, 'user': {"firsname": "pepito", "lastname": "Perez", "email": "quicenojuan996@gmail.com"}};
+        // _prefs.ultimaPagina = 'login';
+        // bloc.cambiarUsuarioSink(UsuarioModel.fromJson(data['user']));
+      //*****************************
     }
   }
 
   void _iniciarDatos(BuildContext context, PatronBloc bloc) {
     if(_iniciarData){
       _iniciarData=false;
-      if(bloc.correoEmitido!=null){
-        _inputEmailController.text = bloc.correoEmitido;
+      try {
+        if(bloc.correoEmitido!=null){
+          _inputEmailController.text = bloc.correoEmitido;
+          print('bloc asignado');
+        }
+        print('es nulo');
+      } catch (e) {
+        print('error bloc');
       }
       if(_isSwitched){
         bloc.cambiarCorreoFormSink(_prefs.correo);

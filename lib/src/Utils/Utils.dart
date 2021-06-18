@@ -38,6 +38,7 @@ void alertaErrorConexion(BuildContext context, String titulo, String error) {
         content: new Text("$error"),
         actions: <Widget>[
           // usually buttons at the bottom of the dialog
+          // ignore: deprecated_member_use
           FlatButton(
             child: new Text("Aceptar"),
             onPressed: () {

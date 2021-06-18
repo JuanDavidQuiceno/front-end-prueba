@@ -138,6 +138,7 @@ class _DetalleProductPageState extends State<DetalleProductPage> {
     final bloc = Provider.of(context);
     return Padding(
       padding: EdgeInsets.symmetric(horizontal:  10.0),
+      // ignore: deprecated_member_use
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         onPressed: (){

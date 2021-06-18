@@ -360,6 +360,7 @@ class _AddProductPageState extends State<AddProductPage> {
   Widget _botonEnviar(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).orientation==Orientation.landscape? 100.0: 20.0),
+      // ignore: deprecated_member_use
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         onPressed:(){

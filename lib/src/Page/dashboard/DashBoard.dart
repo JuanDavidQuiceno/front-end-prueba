@@ -33,18 +33,21 @@ class _DashboardPageState extends State<DashboardPage> {
     }else{
       return showDialog(
         context: context,
-        child: AlertDialog(
+        builder: (BuildContext context) => AlertDialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
           content: Text('Antes de salir de la aplicación le recomendamos cerrar la sesión'),
           actions: <Widget>[
-            FlatButton(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+            TextButton(
+              // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               onPressed: () => Navigator.pop(context, false),
               child: Text('Cancelar',)
             ),
-            FlatButton(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-              color: Colors.blue,
+            TextButton(
+              style: ButtonStyle(
+                // color: Colors.blue,
+                // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                
+              ),
               onPressed: () => Navigator.pop(context, true),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -56,7 +59,7 @@ class _DashboardPageState extends State<DashboardPage> {
               )
             ),
           ],
-        )
+        ),
       );
     }
   }

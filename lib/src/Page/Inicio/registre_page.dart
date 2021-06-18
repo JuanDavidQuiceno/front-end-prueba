@@ -50,6 +50,8 @@ class _RegisterPageState extends State<RegisterPage> {
   }
   @override
   Widget build(BuildContext context) {
+    final bloc = Provider.of(context);
+    _iniciarDatos(context, bloc);
     return WillPopScope(
       onWillPop: _alertaSalir,
       child: Scaffold(
@@ -75,15 +77,17 @@ class _RegisterPageState extends State<RegisterPage> {
     }else{
       return showDialog(
         context: context,
-        child: AlertDialog(
+        builder: (BuildContext context) => AlertDialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
           content: Text('¿Quieres salir de la aplicación?'),
           actions: <Widget>[
+            // ignore: deprecated_member_use
             FlatButton(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               onPressed: () => Navigator.pop(context, false),
               child: Text('Cancelar',)
             ),
+            // ignore: deprecated_member_use
             FlatButton(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               color: Colors.blue,
@@ -243,10 +247,6 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Widget _campoEmail(BuildContext context, PatronBloc bloc) {
-    if(_iniciarData && bloc.correoEmitido!=null){
-      _iniciarData=false;
-      _inputEmailController.text = bloc.correoEmitido;  
-    }
     return StreamBuilder(
       stream: bloc.correoFormStream,
       builder: (BuildContext context, AsyncSnapshot snapshot){
@@ -363,6 +363,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget _botonEnviar(BuildContext context, PatronBloc bloc) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).orientation==Orientation.landscape? 100.0: 20.0),
+      // ignore: deprecated_member_use
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         onPressed: (){
@@ -405,6 +406,20 @@ class _RegisterPageState extends State<RegisterPage> {
     }catch(general){
       setState(() {_isLoading = false;});
       alertaErrorConexion(context, 'Upss','No se pudo establecer conexion con el servidor, intente nuevamente');
+    }
+  }
+
+  void _iniciarDatos(BuildContext context, PatronBloc bloc) {
+    if(_iniciarData){
+      _iniciarData=false;
+      try {
+        _inputEmailController.text = bloc.correoEmitido; 
+        print('asignado');
+      } catch (e) {
+        print('nullo correo');
+      }
+      setState(() {
+      });
     }
   }
 }

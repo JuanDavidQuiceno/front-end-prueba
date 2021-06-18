@@ -16,6 +16,7 @@ class PerfilPage extends StatefulWidget {
 class _PerfilPageState extends State<PerfilPage> {
 
   final _prefs = PreferenciasUsuario();
+  final ButtonStyle style = ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)));
 
   @override
   void initState() { 
@@ -159,6 +160,7 @@ class _PerfilPageState extends State<PerfilPage> {
                 primarySwatch: Colors.red,
                 accentColor: Colors.red,
               ),
+              // ignore: deprecated_member_use
               child: OutlineButton(
                 onPressed: (){
                   FocusScope.of(context).unfocus();
@@ -171,11 +173,14 @@ class _PerfilPageState extends State<PerfilPage> {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
                         // title: Text('Cerrar Sesión', textAlign: TextAlign.center, overflow: TextOverflow.ellipsis,),
                         content: Text("¿Seguro quieres cerrar la sesión?"),
+
                         actions: <Widget>[
+                          // ignore: deprecated_member_use
                           RaisedButton(
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
                             color: Colors.green,
                             child: Row(
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text("Cancelar", style: TextStyle(color: Colors.white)),
                                 // Icon(Icons.cance, color: Colors.white, size: 15.0,),
@@ -186,10 +191,12 @@ class _PerfilPageState extends State<PerfilPage> {
                             }
                           ),
 
+                          // ignore: deprecated_member_use
                           RaisedButton(
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
                             color: Colors.red,
                             child: Row(
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text("Cerrar Sesión", style: TextStyle(color: Colors.white)),
                                 SizedBox(width: 5.0,),

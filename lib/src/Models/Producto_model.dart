@@ -4,7 +4,7 @@ import '../Models/Categoria_model.dart';
 
 class Productos {
 
-  List<ProductoModel> items = new List();
+  List<ProductoModel> items = [];
 
   Productos();
 

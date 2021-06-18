@@ -15,7 +15,7 @@ class ProductoProvider{
     final userHeader = {
       'Authorization': 'Bearer ${_prefs.token}'
     };
-    final respuesta = await http.get('$_url/categorias', headers: userHeader);
+    final respuesta = await http.get(Uri.parse('$_url/categorias'), headers: userHeader);
     final decodeRespuesta = json.decode(respuesta.body );
     if(respuesta.statusCode == 201 && decodeRespuesta.containsKey('data')){
       return {'ok': true, 'code': respuesta.statusCode , 'data': decodeRespuesta['data'] };
@@ -34,7 +34,7 @@ class ProductoProvider{
       'Authorization': 'Bearer ${_prefs.token}'
     };
     
-    final respuesta = await http.post('$_url/productos', headers: userHeader, );
+    final respuesta = await http.post(Uri.parse('$_url/productos'), headers: userHeader, );
     final decodeRespuesta = json.decode(respuesta.body);
     if(respuesta.statusCode == 201 && decodeRespuesta.containsKey('producto') && decodeRespuesta.containsKey('msg')){
       return {'ok': true, 'code': respuesta.statusCode, 'titulo': decodeRespuesta['msg'], 'mensaje':'Producto creado correctamente', 'productos':decodeRespuesta['productos']};
@@ -53,7 +53,7 @@ class ProductoProvider{
       'Authorization': 'Bearer ${_prefs.token}'
     };
     
-    final respuesta = await http.put('$_url/productos/${producto.id}', headers: userHeader, body: productoModelToJsonRegister(producto));
+    final respuesta = await http.put(Uri.parse('$_url/productos/${producto.id}'), headers: userHeader, body: productoModelToJsonRegister(producto));
     final decodeRespuesta = json.decode(respuesta.body);
     if(respuesta.statusCode == 201 && decodeRespuesta.containsKey('producto') && decodeRespuesta.containsKey('msg')){
       return {'ok': true, 'code': respuesta.statusCode, 'titulo': decodeRespuesta['msg'], 'mensaje': 'Actualizamos el producto correctamente', 'producto':decodeRespuesta['producto']};
@@ -70,7 +70,7 @@ class ProductoProvider{
     final userHeader = {
       'Authorization': 'Bearer ${_prefs.token}'
     };
-    final respuesta = await http.delete('$_url/productos/$id', headers: userHeader);
+    final respuesta = await http.delete(Uri.parse('$_url/productos/$id'), headers: userHeader);
     final decodeRespuesta = json.decode(respuesta.body);
     if(respuesta.statusCode == 201 && decodeRespuesta.containsKey('producto') && decodeRespuesta.containsKey('msg')){
       return {'ok': true, 'code': respuesta.statusCode,  'titulo': decodeRespuesta['msg'], 'mensaje': 'Se elimino de manera correcta el producto'};

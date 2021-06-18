@@ -19,7 +19,7 @@ class _ProductosPageState extends State<ProductosPage> {
   final _providerProductos = new ProductoProvider();
   // ProductoModel _producto = ProductoModel();
 
-  List<ProductoModel> _listaProductos = new List();
+  List<ProductoModel> _listaProductos = [];
 
   bool _isLoading = false;
   bool _cargainicial = true;
@@ -123,6 +123,7 @@ class _ProductosPageState extends State<ProductosPage> {
   Widget _campoBoton2(BuildContext context, String texto) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).orientation==Orientation.landscape? 100.0: 60.0, vertical: 20.0),
+      // ignore: deprecated_member_use
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         onPressed: (){
@@ -179,6 +180,18 @@ class _ProductosPageState extends State<ProductosPage> {
       print(e);
       setState(() {_isLoading = false;});
       alertaErrorConexion(context, 'Problemas en la verificación', 'Parece que no se completo el registro');
+      //===================== descomentar para pruebas 
+      //*****************************
+        // Map data ={ 'ok': true, 'code': 201 , 'productos':[
+        //   {'id':8,'nombre':'Portatil 3','precio':1000000,'inventario':50,'categoria':{'id':6, 'categoria':'Tecnología'}},
+        //   {'id':9,'nombre':'Portatil 1','precio':1000000,'inventario':50,'categoria':{ 'id':6,'categoria':'Tecnología'}}
+        // ]};
+        // List listado = data['productos'];
+        // listado.forEach((element) {
+        //       _listaProductos.add(ProductoModel.fromJson(element));
+        //     });
+        // bloc.cambiarListaProdcutoSink(_listaProductos);
+      //*****************************
     }
   }
 }

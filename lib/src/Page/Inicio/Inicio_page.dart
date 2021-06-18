@@ -46,16 +46,19 @@ class _InicioPageState extends State<InicioPage> {
 
   Future<bool> _alertaSalir()async{
     return showDialog(
+
       context: context,
-      child: AlertDialog(
+      builder: (BuildContext context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         content: Text('¿Quieres salir de la aplicación?'),
         actions: <Widget>[
+          // ignore: deprecated_member_use
           FlatButton(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
             onPressed: () => Navigator.pop(context, false),
             child: Text('Cancelar',)
           ),
+          // ignore: deprecated_member_use
           FlatButton(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
             color: Colors.blue,
@@ -107,6 +110,7 @@ class _InicioPageState extends State<InicioPage> {
   Widget _loginBoton(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).orientation==Orientation.landscape? 100.0: 20.0, vertical: 5.0),
+      // ignore: deprecated_member_use
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         onPressed: (){
@@ -139,6 +143,7 @@ class _InicioPageState extends State<InicioPage> {
   Widget _registreBoton(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).orientation==Orientation.landscape? 100.0: 20.0, vertical: 5.0),
+      // ignore: deprecated_member_use
       child: OutlineButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         onPressed: (){

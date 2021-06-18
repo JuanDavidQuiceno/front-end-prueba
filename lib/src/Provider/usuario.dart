@@ -12,7 +12,7 @@ class UsuarioProvider{
 
   Future<Map<String, dynamic>> registrar(UsuarioModel user)async{
     
-    final respuesta = await http.post('$_url/registre', body: usuarioModelToJsonRegister(user));
+    final respuesta = await http.post(Uri.parse('$_url/registre'), body: usuarioModelToJsonRegister(user));
     final decodeRespuesta = json.decode(respuesta.body);
     if(respuesta.statusCode == 201 && decodeRespuesta.containsKey('msg')){
       return {'ok': true, 'code': respuesta.statusCode , 'titulo': 'Bien hecho', 'mensaje': decodeRespuesta['msg']};
@@ -25,7 +25,7 @@ class UsuarioProvider{
 
   Future<Map<String, dynamic>> login(UsuarioModel user)async{
     
-    final respuesta = await http.post('$_url/login', body: usuarioModelToJsoLogin(user));
+    final respuesta = await http.post(Uri.parse('$_url/login'), body: usuarioModelToJsoLogin(user));
     final decodeRespuesta = json.decode(respuesta.body);
     if(respuesta.statusCode == 201 && decodeRespuesta.containsKey('token') && decodeRespuesta.containsKey('user')){
       _prefs.token = decodeRespuesta['token'];
